@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('type', ['in', 'out'])->default('in');
             $table->text('reason')->nullable(); // comentario: "Stock encontrado", "Productos dañados", etc.
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

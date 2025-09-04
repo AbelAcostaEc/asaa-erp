@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('photo')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

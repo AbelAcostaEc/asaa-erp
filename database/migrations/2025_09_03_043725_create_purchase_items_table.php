@@ -19,6 +19,7 @@ return new class extends Migration
             $table->decimal('price', 10, 2); // precio unitario de compra
             $table->decimal('total', 12, 2); // quantity * price
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
