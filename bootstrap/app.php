@@ -11,7 +11,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Middleware global (se aplica a todos los requests)
+        $middleware->appendToGroup('web', \App\Http\Middleware\LanguageMiddleware::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

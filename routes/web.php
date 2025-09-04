@@ -12,4 +12,13 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-require __DIR__.'/auth.php';
+Route::get('lang/{locale}', function ($locale) {
+
+    if (in_array($locale, ['en', 'es', 'de'])) {
+        session(['locale_lang' => $locale]);
+    }
+    return redirect()->back();
+})->name('lang.switch');
+
+
+require __DIR__ . '/auth.php';
