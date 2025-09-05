@@ -1,3 +1,84 @@
 <div>
-    <h3>The <code>Category</code> livewire component is loaded from the <code>Inventory</code> module.</h3>
+    <!-- Alerts -->
+    @include('partials.alerts')
+    <!-- Alerts End -->
+
+    @section('top_actions')
+        <!-- Add New Button Start -->
+        <button type="button" class="btn btn-outline-primary btn-icon btn-icon-start ms-1" data-bs-toggle="modal" data-bs-target="#formModal">
+            <i data-acorn-icon="plus"></i>
+            <span>@lang('layout.new')</span>
+        </button>
+        <!-- Add New Button End -->
+    @endsection
+
+    <!-- Content Start -->
+    <div class="data-table-rows slim">
+        <!-- Controls Start -->
+        <div class="row">
+            <!-- Search Start -->
+            <div class="col-sm-12 col-md-5 col-lg-3 col-xxl-2 mb-1">
+                @include('partials.search-field')
+            </div>
+            <!-- Search End -->
+
+            <div class="col-sm-12 col-md-7 col-lg-9 col-xxl-10 text-end mb-1">
+                @include('partials.pagination-dropdown', ['limit' => $limit])
+            </div>
+        </div>
+        <!-- Controls End -->
+
+        <!-- Table Start -->
+        <div class="table-responsive-sm ">
+            <table id="" class="table table-row-bordered table-hover table-rounded table-striped">
+                <thead>
+                <tr>
+                    <th class="text-muted text-small text-uppercase">Código</th>
+                    <th class="text-muted text-small text-uppercase">Nombre</th>
+                    <th class="empty">&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                @if ($categories->isNotEmpty())
+                    @foreach ($categories as $category)
+                        <tr>
+                            <td>{{ $category->name ?? '-' }}</td>
+                            <td>
+                                <div class="d-flex justify-content-end">
+                                    <div class="dropdown dropstart">
+                                        <button class="btn btn-outline btn-outline-primary pe-2 ps-3" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Acciones <i class="fa fa-caret-down text-primary ps-2" style="font-size: 18px;"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <!-- Edit Button Start -->
+                                            <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#formModal" wire:click="edit({{ $category->id }})">
+                                                Editar
+                                            </button>
+                                            <!-- Edit Button End -->
+
+                                            <!-- Delete Button Start -->
+                                            <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#formModal" wire:click="delete({{ $category->id }})">
+                                                Eliminar
+                                            </button>
+                                            <!-- Delete Button End -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                @endif
+                </tbody>
+            </table>
+        </div>
+        <!-- Table End -->
+        <div class="my-5">
+            @include('partials.pagination', ['paginator' => $categories])
+        </div>
+    </div>
+    <!-- Content End -->
+
+    <!-- Modals -->
+    @include('inventory::livewire.category.category-form')
+    <!-- Modals End -->
 </div>

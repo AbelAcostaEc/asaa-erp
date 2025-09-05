@@ -26,6 +26,8 @@
 
 <script src="{{ asset('js/vendor/plyr.min.js') }}"></script>
 
+<script src="{{ asset('plugins/toastr.min.js') }}"></script>
+
 <!-- Vendor Scripts End -->
 
 <!-- Template Base Scripts Start -->

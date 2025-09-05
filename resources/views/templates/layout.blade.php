@@ -27,12 +27,7 @@
 
                     <!-- Top Buttons Start -->
                     <div class="col-12 col-sm-6 d-flex align-items-start justify-content-end">
-                        <!-- Tour Button Start -->
-                        <button type="button" class="btn btn-outline-primary btn-icon btn-icon-end w-100 w-sm-auto" id="dashboardTourButton">
-                            <span>@lang('layout.guide')</span>
-                            <i data-acorn-icon="flag"></i>
-                        </button>
-                        <!-- Tour Button End -->
+                        @yield('top_actions')
                     </div>
                     <!-- Top Buttons End -->
                 </div>

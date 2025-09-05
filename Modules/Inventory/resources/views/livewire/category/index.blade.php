@@ -1,4 +1,4 @@
-@extends('templates.layout', ['html_tag_data' => [], 'title' => 'Tipo de Deuda', 'description' => '', 'menu' => 'administration', 'submenu' => 'debt_type'])
+@extends('templates.layout', ['html_tag_data' => [], 'title' => __('inventory::layout.categories'), 'description' => '', 'menu' => 'inventory', 'submenu' => 'category'])
 
 @section('breadcrumbs')
     <li class="breadcrumb-item">@lang('inventory::layout.inventory')</li>
