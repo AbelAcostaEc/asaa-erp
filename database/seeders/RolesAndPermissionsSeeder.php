@@ -14,12 +14,19 @@ class RolesAndPermissionsSeeder extends Seeder
      */
     public function run(): void
     {
-        Permission::findOrCreate('Ver Categorias', 'web');
-        Permission::findOrCreate('Crear Categorias', 'web');
-        Permission::findOrCreate('Editar Categorias', 'web');
-        Permission::findOrCreate('Eliminar Categorias', 'web');
+        $permissionsKeys = ['category'];
 
-        // Crear roles (vacíos, sin permisos asignados todavía)
-        Role::findOrCreate('Administrador', 'web');
+        foreach ($permissionsKeys as $key) {
+            Permission::findOrCreate('read ' . $key, 'web');
+            Permission::findOrCreate('create ' . $key, 'web');
+            Permission::findOrCreate('update ' . $key, 'web');
+            Permission::findOrCreate('delete ' . $key, 'web');
+        }
+
+        // Crear rol Administrador
+        $adminRole = Role::findOrCreate('Administrator', 'web');
+
+        // Asignar todos los permisos al rol Administrador
+        $adminRole->syncPermissions(Permission::all());
     }
 }
