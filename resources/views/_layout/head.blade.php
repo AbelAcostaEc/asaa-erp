@@ -11,9 +11,9 @@
 <!-- Font Tags End -->
 <!-- Vendor Styles Start -->
 <link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.min.css') }}"/>
-<link rel="stylesheet" href="{{ asset('css/vendor/OverlayScrollbars.min.css') }}"/>
+{{--<link rel="stylesheet" href="{{ asset('css/vendor/OverlayScrollbars.min.css') }}"/>--}}
 
-<link rel="stylesheet" href="{{ asset('css/vendor/glide.core.min.css') }}"/>
+{{--<link rel="stylesheet" href="{{ asset('css/vendor/glide.core.min.css') }}"/>--}}
 
 <link rel="stylesheet" href="{{ asset('css/vendor/introjs.min.css') }}"/>
 
@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="{{ asset('css/vendor/plyr.css') }}"/>
 
 <link rel="stylesheet" href="{{ asset('plugins/toastr.css') }}"/>
+<link rel="stylesheet" href="{{ asset('plugins/bootstrap-icons/bootstrap-icons.min.css') }}"/>
 <!-- Vendor Styles End -->
 <!-- Template Base Styles Start -->
 <link rel="stylesheet" href="{{ asset('css/styles.css') }}"/>
@@ -36,8 +37,9 @@
 {{-- Color template custom theme --}}
 <style>
     /* alertas */
-    #toastr-container.custom-right {
-        top: 57px !important;
+    #toast-container.custom-right {
+        top: 75px;
+        right: 5px;
     }
 
     #toastr-container > div.custom-toast {

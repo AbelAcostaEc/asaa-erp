@@ -12,19 +12,19 @@
 <script src="{{ asset('icon/acorn-icons.js') }}"></script>
 <script src="{{ asset('icon/acorn-icons-interface.js') }}"></script>
 
-<script src="{{ asset('js/vendor/Chart.bundle.min.js') }}"></script>
+{{--<script src="{{ asset('js/vendor/Chart.bundle.min.js') }}"></script>--}}
 
-<script src="{{ asset('js/vendor/chartjs-plugin-datalabels.js') }}"></script>
+{{--<script src="{{ asset('js/vendor/chartjs-plugin-datalabels.js') }}"></script>--}}
 
-<script src="{{ asset('js/vendor/chartjs-plugin-rounded-bar.min.js') }}"></script>
+{{--<script src="{{ asset('js/vendor/chartjs-plugin-rounded-bar.min.js') }}"></script>--}}
 
-<script src="{{ asset('js/vendor/glide.min.js') }}"></script>
+{{--<script src="{{ asset('js/vendor/glide.min.js') }}"></script>--}}
 
-<script src="{{ asset('js/vendor/intro.min.js') }}"></script>
+{{--<script src="{{ asset('js/vendor/intro.min.js') }}"></script>--}}
 
-<script src="{{ asset('js/vendor/select2.full.min.js') }}"></script>
+{{--<script src="{{ asset('js/vendor/select2.full.min.js') }}"></script>--}}
 
-<script src="{{ asset('js/vendor/plyr.min.js') }}"></script>
+{{--<script src="{{ asset('js/vendor/plyr.min.js') }}"></script>--}}
 
 <script src="{{ asset('plugins/toastr.min.js') }}"></script>
 
@@ -39,81 +39,83 @@
 <!-- Template Base Scripts End -->
 <!-- Page Specific Scripts Start -->
 
-<script src="{{ asset('js/cs/glide.custom.js') }}"></script>
+{{--<script src="{{ asset('js/cs/glide.custom.js') }}"></script>--}}
 
-<script src="{{ asset('js/cs/charts.extend.js') }}"></script>
+{{--<script src="{{ asset('js/cs/charts.extend.js') }}"></script>--}}
 
-<script src="{{ asset('js/pages/dashboard.default.js') }}"></script>
+{{--<script src="{{ asset('js/pages/dashboard.default.js') }}"></script>--}}
 
-<script src="{{ asset('js/common.js') }}"></script>
+{{--<script src="{{ asset('js/common.js') }}"></script>--}}
 <script src="{{ asset('js/scripts.js') }}"></script>
 <!-- Page Specific Scripts End -->
 
 <script>
-    // Validación de campo numérico
-    $(document).on('keydown', '.numerico', function (event) {
-        // Evitar la entrada de caracteres si Shift está presionado
-        if (event.shiftKey) {
+    document.addEventListener("DOMContentLoaded", function () {
+        // Validación de campo numérico
+        $(document).on('keydown', '.numerico', function (event) {
+            // Evitar la entrada de caracteres si Shift está presionado
+            if (event.shiftKey) {
+                event.preventDefault();
+                return;
+            }
+
+            // Permitir combinaciones de teclas Ctrl (Copiar, Pegar, Cortar)
+            if (event.ctrlKey && (event.keyCode === 67 || // Ctrl + C (Copiar)
+                event.keyCode === 86 || // Ctrl + V (Pegar)
+                event.keyCode === 90 || // Ctrl + Z (Deshacer)
+                event.keyCode === 88)) { // Ctrl + X (Cortar)
+                return; // Permitir estas combinaciones de teclas
+            }
+
+            // Permitir teclas especiales (Suprimir, Retroceso, Tab, Flechas de dirección)
+            if (event.keyCode === 46 || // Suprimir
+                event.keyCode === 8 || // Retroceso
+                event.keyCode === 9 || // Tab
+                event.keyCode === 190 || // Punto decimal (si decides permitir puntos más tarde)
+                event.keyCode === 110 || // Punto decimal en teclado numérico
+                (event.keyCode >= 37 && event.keyCode <= 40) || // Flechas de dirección
+                (event.keyCode >= 48 && event.keyCode <= 57) || // Números en la fila superior
+                (event.keyCode >= 96 && event.keyCode <= 105) // Números en el teclado numérico
+            ) {
+                return;
+            }
+
+            // Prevenir la entrada de cualquier otro carácter
             event.preventDefault();
-            return;
-        }
-
-        // Permitir combinaciones de teclas Ctrl (Copiar, Pegar, Cortar)
-        if (event.ctrlKey && (event.keyCode === 67 || // Ctrl + C (Copiar)
-            event.keyCode === 86 || // Ctrl + V (Pegar)
-            event.keyCode === 90 || // Ctrl + Z (Deshacer)
-            event.keyCode === 88)) { // Ctrl + X (Cortar)
-            return; // Permitir estas combinaciones de teclas
-        }
-
-        // Permitir teclas especiales (Suprimir, Retroceso, Tab, Flechas de dirección)
-        if (event.keyCode === 46 || // Suprimir
-            event.keyCode === 8 || // Retroceso
-            event.keyCode === 9 || // Tab
-            event.keyCode === 190 || // Punto decimal (si decides permitir puntos más tarde)
-            event.keyCode === 110 || // Punto decimal en teclado numérico
-            (event.keyCode >= 37 && event.keyCode <= 40) || // Flechas de dirección
-            (event.keyCode >= 48 && event.keyCode <= 57) || // Números en la fila superior
-            (event.keyCode >= 96 && event.keyCode <= 105) // Números en el teclado numérico
-        ) {
-            return;
-        }
-
-        // Prevenir la entrada de cualquier otro carácter
-        event.preventDefault();
-    });
+        });
 
 
-    // Validación de campo numérico
-    $(document).on('keydown', '.numerico-int', function (event) {
-        // Evitar la entrada de caracteres si Shift está presionado
-        if (event.shiftKey) {
-            event.preventDefault();
-            return;
-        }
+        // Validación de campo numérico
+        $(document).on('keydown', '.numerico-int', function (event) {
+            // Evitar la entrada de caracteres si Shift está presionado
+            if (event.shiftKey) {
+                event.preventDefault();
+                return;
+            }
 
-        // Permitir combinaciones de teclas Ctrl (Copiar, Pegar, Cortar)
-        if (event.ctrlKey && (event.keyCode === 67 || // Ctrl + C (Copiar)
-            event.keyCode === 86 || // Ctrl + V (Pegar)
-            event.keyCode === 90 || // Ctrl + Z (Deshacer)
-            event.keyCode === 88)) { // Ctrl + X (Cortar)
-            return; // Permitir estas combinaciones de teclas
-        }
+            // Permitir combinaciones de teclas Ctrl (Copiar, Pegar, Cortar)
+            if (event.ctrlKey && (event.keyCode === 67 || // Ctrl + C (Copiar)
+                event.keyCode === 86 || // Ctrl + V (Pegar)
+                event.keyCode === 90 || // Ctrl + Z (Deshacer)
+                event.keyCode === 88)) { // Ctrl + X (Cortar)
+                return; // Permitir estas combinaciones de teclas
+            }
 
-        // Permitir teclas especiales como suprimir, retroceso y tab
-        if (event.keyCode === 46 || // Delete
-            event.keyCode === 8 || // Backspace
-            event.keyCode === 9 || // Tab
-            (event.keyCode >= 37 && event.keyCode <= 40) || // Flechas de dirección
-            (event.keyCode >= 48 && event.keyCode <= 57) || // Números en la fila superior
-            (event.keyCode >= 96 && event.keyCode <= 105) // Números en el teclado numérico
-        ) {
-            // Permitir la tecla presionada
-            return;
-        } else {
-            // Prevenir la tecla presionada
-            event.preventDefault();
-        }
+            // Permitir teclas especiales como suprimir, retroceso y tab
+            if (event.keyCode === 46 || // Delete
+                event.keyCode === 8 || // Backspace
+                event.keyCode === 9 || // Tab
+                (event.keyCode >= 37 && event.keyCode <= 40) || // Flechas de dirección
+                (event.keyCode >= 48 && event.keyCode <= 57) || // Números en la fila superior
+                (event.keyCode >= 96 && event.keyCode <= 105) // Números en el teclado numérico
+            ) {
+                // Permitir la tecla presionada
+                return;
+            } else {
+                // Prevenir la tecla presionada
+                event.preventDefault();
+            }
+        });
     });
 </script>
 
@@ -154,9 +156,9 @@
             "preventDuplicates": false,
             "onclick": null,
             "showDuration": "300",
-            "hideDuration": "1000",
+            "hideDuration": "1000000",
             "timeOut": "5000",
-            "extendedTimeOut": "1000",
+            "extendedTimeOut": "1000000",
             "showEasing": "swing",
             "hideEasing": "linear",
             "showMethod": "fadeIn",
