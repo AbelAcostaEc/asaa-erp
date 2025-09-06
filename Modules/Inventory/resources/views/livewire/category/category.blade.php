@@ -32,42 +32,33 @@
         <div class="table-responsive-sm ">
             <table id="" class="table table-row-bordered table-hover table-rounded table-striped">
                 <thead>
-                <tr>
-                    <th class="text-muted text-small text-uppercase">Código</th>
-                    <th class="text-muted text-small text-uppercase">Nombre</th>
-                    <th class="empty">&nbsp;</th>
-                </tr>
+                    <tr>
+                        <th class="text-muted text-small text-uppercase">Código</th>
+                        <th class="text-muted text-small text-uppercase">Nombre</th>
+                        <th class="empty">&nbsp;</th>
+                    </tr>
                 </thead>
                 <tbody>
-                @if ($categories->isNotEmpty())
-                    @foreach ($categories as $category)
-                        <tr>
-                            <td>{{ $category->name ?? '-' }}</td>
-                            <td>
-                                <div class="d-flex justify-content-end">
-                                    <div class="dropdown dropstart">
-                                        <button class="btn btn-outline btn-outline-primary pe-2 ps-3" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Acciones <i class="fa fa-caret-down text-primary ps-2" style="font-size: 18px;"></i>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <!-- Edit Button Start -->
+                    @if ($categories->isNotEmpty())
+                        @foreach ($categories as $category)
+                            <tr>
+                                <td>{{ $category->name ?? '-' }}</td>
+                                <td>
+                                    <div class="d-flex justify-content-end">
+                                        <x-actions-row>
                                             <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#formModal" wire:click="edit({{ $category->id }})">
                                                 Editar
                                             </button>
-                                            <!-- Edit Button End -->
 
-                                            <!-- Delete Button Start -->
                                             <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#formModal" wire:click="delete({{ $category->id }})">
                                                 Eliminar
                                             </button>
-                                            <!-- Delete Button End -->
-                                        </div>
+                                        </x-actions-row>
                                     </div>
-                                </div>
-                            </td>
-                        </tr>
-                    @endforeach
-                @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>

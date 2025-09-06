@@ -2,7 +2,7 @@
     <div class="nav-content d-flex">
         <!-- Logo Start -->
         <div class="logo position-relative">
-            <a href="{{route('dashboard')}}">
+            <a href="{{route('administration.dashboard')}}">
                 <!-- Logo can be added directly -->
                 <img src="{{ asset('img/logo/logo-light.svg') }}" alt="logo" />
             </a>
@@ -76,35 +76,29 @@
             </li>
         </ul>
         <!-- Icons Menu End -->
+        @php
+            $menu = !empty($menu) ? $menu : '';
+            $submenu = !empty($submenu) ? $submenu : '';
+        @endphp
 
         <!-- Menu Start -->
         <div class="menu-container flex-grow-1">
             <ul id="menu" class="menu">
                 <li>
-                    <a href="{{ route('inventory.categories') }}" class="active">
+                    <a href="{{ route('administration.dashboard') }}" class="{{ $menu == 'dashboard' ? 'active' : '' }}">
                         <i data-acorn-icon="home" class="icon" data-acorn-size="18"></i>
                         <span class="label">@lang('layout.home')</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#dashboards">
+                    <a href="#inventoryMenu" class="{{ $menu == 'inventory' ? 'active' : '' }}">
                         <i data-acorn-icon="home" class="icon" data-acorn-size="18"></i>
-                        <span class="label">Dashboards</span>
+                        <span class="label">@lang('inventory::layout.inventory')</span>
                     </a>
-                    <ul id="dashboards">
+                    <ul id="inventoryMenu">
                         <li>
-                            <a href="Dashboards.Default.html">
-                                <span class="label">Default</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="Dashboards.Visual.html">
-                                <span class="label">Visual</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="Dashboards.Analytic.html">
-                                <span class="label">Analytic</span>
+                            <a href="{{ route('inventory.categories') }}" class="{{ $submenu == 'category' ? 'active' : '' }}">
+                                <span class="label">@lang('inventory::layout.categories')</span>
                             </a>
                         </li>
                     </ul>

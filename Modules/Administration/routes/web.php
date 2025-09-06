@@ -3,6 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Administration\Http\Controllers\AdministrationController;
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::resource('administrations', AdministrationController::class)->names('administration');
+Route::prefix('administration')->middleware('auth')->group(function () {
+    Route::view('/dashboard', 'administration::livewire.dashboard.index')->name('administration.dashboard');
 });

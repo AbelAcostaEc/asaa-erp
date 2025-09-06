@@ -11,4 +11,5 @@ return [
     'category' => 'Categoria',
     'name' => 'nombre',
     'actions' => 'Acciones',
+    'new' => 'Nuevo',
 ];
