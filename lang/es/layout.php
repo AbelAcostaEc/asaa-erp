@@ -10,4 +10,5 @@ return [
     'delete' => 'Eliminar',
     'category' => 'Categoria',
     'name' => 'nombre',
+    'actions' => 'Acciones',
 ];
