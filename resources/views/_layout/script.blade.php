@@ -5,9 +5,9 @@
 <!-- Vendor Scripts Start -->
 <script src="{{ asset('js/vendor/jquery-3.5.1.min.js') }}"></script>
 <script src="{{ asset('js/vendor/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('js/vendor/OverlayScrollbars.min.js') }}"></script>
-<script src="{{ asset('js/vendor/autoComplete.min.js') }}"></script>
-<script src="{{ asset('js/vendor/clamp.min.js') }}"></script>
+{{-- <script src="{{ asset('js/vendor/OverlayScrollbars.min.js') }}"></script> --}}
+{{-- <script src="{{ asset('js/vendor/autoComplete.min.js') }}"></script> --}}
+{{-- <script src="{{ asset('js/vendor/clamp.min.js') }}"></script> --}}
 
 <script src="{{ asset('icon/acorn-icons.js') }}"></script>
 <script src="{{ asset('icon/acorn-icons-interface.js') }}"></script>
@@ -46,7 +46,7 @@
 {{--<script src="{{ asset('js/pages/dashboard.default.js') }}"></script>--}}
 
 {{--<script src="{{ asset('js/common.js') }}"></script>--}}
-<script src="{{ asset('js/scripts.js') }}"></script>
+{{-- <script src="{{ asset('js/scripts.js') }}"></script> --}}
 <!-- Page Specific Scripts End -->
 
 <script>

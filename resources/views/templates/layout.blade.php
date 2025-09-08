@@ -6,84 +6,84 @@
 </head>
 
 <body>
-<div id="root">
-    @include('_layout.nav')
+    <div id="root">
+        @include('_layout.nav')
 
-    <main>
-        <div class="container">
-            <!-- Title and Top Buttons Start -->
-            <div class="page-title-container">
-                <div class="row">
-                    <!-- Title Start -->
-                    <div class="col-12 col-sm-6">
-                        <h1 class="mb-0 pb-0 display-4" id="title">@yield('titlePage', ($title ?? 'title'))</h1>
-                        <nav class="breadcrumb-container d-inline-block" aria-label="breadcrumb">
-                            <ul class="breadcrumb pt-0">
-                                @yield('breadcrumbs')
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- Title End -->
+        <main>
+            <div class="container">
+                <!-- Title and Top Buttons Start -->
+                <div class="page-title-container">
+                    <div class="row">
+                        <!-- Title Start -->
+                        <div class="col-12 col-sm-6">
+                            <h1 class="mb-0 pb-0 display-4" id="title">@yield('titlePage', $title ?? 'title')</h1>
+                            <nav class="breadcrumb-container d-inline-block" aria-label="breadcrumb">
+                                <ul class="breadcrumb pt-0">
+                                    @yield('breadcrumbs')
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Title End -->
 
-                    <!-- Top Buttons Start -->
-                    <div class="col-12 col-sm-6 d-flex align-items-start justify-content-end">
-                        @yield('top_actions')
+                        <!-- Top Buttons Start -->
+                        <div class="col-12 col-sm-6 d-flex align-items-start justify-content-end">
+                            @yield('top_actions')
+                        </div>
+                        <!-- Top Buttons End -->
                     </div>
-                    <!-- Top Buttons End -->
                 </div>
-            </div>
-            <!-- Title and Top Buttons End -->
+                <!-- Title and Top Buttons End -->
 
-            <div class="row">
-                <div class="col-12">
-                    <!-- Main section -->
-                    <div class="mb-5">
-                        @if(!empty($subtitle))
-                            <h2 class="small-title">{{ $subtitle }}</h2>
-                        @endif
-                        <div class="card mb-2 h-auto sh-xl-24">
-                            <div class="card-body">
-                                @yield('content')
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Main section -->
+                        <div class="mb-5">
+                            @if (!empty($subtitle))
+                                <h2 class="small-title">{{ $subtitle }}</h2>
+                            @endif
+                            <div class="card mb-2 h-auto sh-xl-24">
+                                <div class="card-body">
+                                    @yield('content')
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Main Section End -->
-                </div>
-            </div>
-        </div>
-    </main>
-    <!-- Layout Footer Start -->
-    <footer>
-        <div class="footer-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-sm-6">
-                        <p class="mb-0 text-muted text-medium">Colored Strategies 2021</p>
-                    </div>
-                    <div class="col-sm-6 d-none d-sm-block">
-                        <ul class="breadcrumb pt-0 pe-0 mb-0 float-end">
-                            <li class="breadcrumb-item mb-0 text-medium">
-                                <a href="https://1.envato.market/BX5oGy" target="_blank" class="btn-link">Review</a>
-                            </li>
-                            <li class="breadcrumb-item mb-0 text-medium">
-                                <a href="https://1.envato.market/BX5oGy" target="_blank" class="btn-link">Purchase</a>
-                            </li>
-                            <li class="breadcrumb-item mb-0 text-medium">
-                                <a href="https://acorn-html-docs.coloredstrategies.com/" target="_blank" class="btn-link">Docs</a>
-                            </li>
-                        </ul>
+                        <!-- Main Section End -->
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- Layout Footer End -->
-</div>
+        </main>
+        <!-- Layout Footer Start -->
+        <footer>
+            <div class="footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <p class="mb-0 text-muted text-medium">Colored Strategies 2021</p>
+                        </div>
+                        <div class="col-sm-6 d-none d-sm-block">
+                            <ul class="breadcrumb pt-0 pe-0 mb-0 float-end">
+                                <li class="breadcrumb-item mb-0 text-medium">
+                                    <a href="https://1.envato.market/BX5oGy" target="_blank" class="btn-link">Review</a>
+                                </li>
+                                <li class="breadcrumb-item mb-0 text-medium">
+                                    <a href="https://1.envato.market/BX5oGy" target="_blank" class="btn-link">Purchase</a>
+                                </li>
+                                <li class="breadcrumb-item mb-0 text-medium">
+                                    <a href="https://acorn-html-docs.coloredstrategies.com/" target="_blank" class="btn-link">Docs</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Layout Footer End -->
+    </div>
 
-<!--begin::Javascript-->
-@include('_layout.script')
-<!--end::Javascript-->
-@stack('modals')
+    <!--begin::Javascript-->
+    @include('_layout.script')
+    <!--end::Javascript-->
+    @stack('modals')
 </body>
 
 </html>

@@ -3,54 +3,17 @@
 namespace Modules\Administration\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Livewire\Actions\Logout;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdministrationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function logout(Request $request)
     {
-        return view('administration::index');
+        $logout = new Logout();
+        $logout();
+        // Se redirecciona al login
+        return redirect('/');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('administration::create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request) {}
-
-    /**
-     * Show the specified resource.
-     */
-    public function show($id)
-    {
-        return view('administration::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        return view('administration::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id) {}
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id) {}
 }
