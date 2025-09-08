@@ -10,17 +10,17 @@
 <!-- Font Tags End -->
 <!-- Vendor Styles Start -->
 <link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.min.css') }}" />
-{{-- <link rel="stylesheet" href="{{ asset('css/vendor/OverlayScrollbars.min.css') }}"/> --}}
+<link rel="stylesheet" href="{{ asset('css/vendor/OverlayScrollbars.min.css') }}"/>
 
-{{-- <link rel="stylesheet" href="{{ asset('css/vendor/glide.core.min.css') }}"/> --}}
+<link rel="stylesheet" href="{{ asset('css/vendor/glide.core.min.css') }}"/>
 
-{{-- <link rel="stylesheet" href="{{ asset('css/vendor/introjs.min.css') }}"/> --}}
+<link rel="stylesheet" href="{{ asset('css/vendor/introjs.min.css') }}"/>
 
-{{-- <link rel="stylesheet" href="{{ asset('css/vendor/select2.min.css') }}"/> --}}
+<link rel="stylesheet" href="{{ asset('css/vendor/select2.min.css') }}"/>
 
-{{-- <link rel="stylesheet" href="{{ asset('css/vendor/select2-bootstrap4.min.css') }}"/> --}}
+<link rel="stylesheet" href="{{ asset('css/vendor/select2-bootstrap4.min.css') }}"/>
 
-{{-- <link rel="stylesheet" href="{{ asset('css/vendor/plyr.css') }}"/> --}}
+<link rel="stylesheet" href="{{ asset('css/vendor/plyr.css') }}"/>
 
 <link rel="stylesheet" href="{{ asset('plugins/toastr.css') }}" />
 <link rel="stylesheet" href="{{ asset('plugins/bootstrap-icons/bootstrap-icons.min.css') }}" />
@@ -30,6 +30,7 @@
 <!-- Template Base Styles End -->
 
 <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+<script src="{{ asset('js/base/loader.js') }}"></script>
 @yield('css')
 
 {{-- Color template custom theme --}}

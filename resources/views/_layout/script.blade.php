@@ -22,7 +22,7 @@
 
 {{--<script src="{{ asset('js/vendor/intro.min.js') }}"></script>--}}
 
-{{--<script src="{{ asset('js/vendor/select2.full.min.js') }}"></script>--}}
+<script src="{{ asset('js/vendor/select2.full.min.js') }}"></script>
 
 {{--<script src="{{ asset('js/vendor/plyr.min.js') }}"></script>--}}
 
@@ -46,7 +46,7 @@
 {{--<script src="{{ asset('js/pages/dashboard.default.js') }}"></script>--}}
 
 {{--<script src="{{ asset('js/common.js') }}"></script>--}}
-{{-- <script src="{{ asset('js/scripts.js') }}"></script> --}}
+<script src="{{ asset('js/scripts.js') }}"></script>
 <!-- Page Specific Scripts End -->
 
 <script>
