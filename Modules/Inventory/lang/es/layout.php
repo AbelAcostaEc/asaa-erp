@@ -1,6 +1,7 @@
 <?php
 return [
     'categories' => 'Categorías',
+    'category' => 'Categoria',
     'inventory' => 'Inventario',
     'create_category_success' => 'Categoría creada con éxito',
     'create_category_error' => 'Error al crear la categoría',
@@ -10,4 +11,10 @@ return [
     'category_not_delete_has_products' => 'No se puede eliminar la categoría porque tiene productos asociados',
     'delete_category_success' => 'Categoría eliminada con éxito',
     'delete_category_error' => 'Error al eliminar la categoría',
+    'products' => 'Productos',
+    'product' => 'Producto',
+    'select_a_category' => 'Selecciona una categoria',
+    'sku'  => 'SKU',
+    'sale_price'  => 'Precio de Venta',
+    'active'  => 'Activo',
 ];

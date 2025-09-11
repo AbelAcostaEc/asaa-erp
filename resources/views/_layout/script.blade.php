@@ -52,7 +52,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Validación de campo numérico
-        $(document).on('keydown', '.numerico', function (event) {
+        $(document).on('keydown', '.input-numeric', function (event) {
             // Evitar la entrada de caracteres si Shift está presionado
             if (event.shiftKey) {
                 event.preventDefault();
@@ -86,7 +86,7 @@
 
 
         // Validación de campo numérico
-        $(document).on('keydown', '.numerico-int', function (event) {
+        $(document).on('keydown', '.input-numeric-int', function (event) {
             // Evitar la entrada de caracteres si Shift está presionado
             if (event.shiftKey) {
                 event.preventDefault();

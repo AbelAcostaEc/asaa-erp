@@ -14,7 +14,7 @@ class RolesAndPermissionsSeeder extends Seeder
      */
     public function run(): void
     {
-        $permissionsKeys = ['category'];
+        $permissionsKeys = ['category', 'product'];
 
         foreach ($permissionsKeys as $key) {
             Permission::findOrCreate('read ' . $key, 'web');

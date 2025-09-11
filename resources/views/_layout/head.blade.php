@@ -1,4 +1,4 @@
-<title>Yakusoft</title>
+<title>@yield('titleSite', 'Asaa-Erp')</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <meta name="description" content="Home screen that contains stats, charts, call to action buttons and various listing elements." />

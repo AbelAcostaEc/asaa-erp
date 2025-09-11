@@ -1,10 +1,10 @@
-@extends('templates.layout', ['html_tag_data' => [], 'title' => __('inventory::layout.categories'), 'description' => '', 'menu' => 'inventory', 'submenu' => 'category'])
+@extends('templates.layout', ['html_tag_data' => [], 'title' => __('inventory::layout.products'), 'description' => '', 'menu' => 'inventory', 'submenu' => 'product'])
 
-@section('titleSite', __('inventory::layout.categories'))
+@section('titleSite', __('inventory::layout.products'))
 
 @section('breadcrumbs')
     <li class="breadcrumb-item">@lang('inventory::layout.inventory')</li>
-    <li class="breadcrumb-item"><a href="{{ route('inventory.categories') }}">@lang('inventory::layout.categories')</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('inventory.products') }}">@lang('inventory::layout.products')</a></li>
 @endsection
 
 @section('css')
@@ -24,5 +24,5 @@
 @endsection
 
 @section('content')
-    @livewire('inventory::category.category')
+    @livewire('inventory::product.product')
 @endsection

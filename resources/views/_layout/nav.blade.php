@@ -101,6 +101,11 @@
                                 <span class="label">@lang('inventory::layout.categories')</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('inventory.products') }}" class="{{ $submenu == 'product' ? 'active' : '' }}">
+                                <span class="label">@lang('inventory::layout.products')</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
